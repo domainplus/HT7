@@ -130,7 +130,7 @@ class AddressBook(UserDict):
         self.data[record.name.value] = record
 
     def find(self, name):
-        return self.data.get(name, None)  #  it returns Record instance
+        return self.data.get(name, None)  # it returns Record instance
 
     def find_part(self, str_part):  # divided this func to 2 parts - search by name and tel
         matching_names = []

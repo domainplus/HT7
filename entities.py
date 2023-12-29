@@ -1,4 +1,3 @@
-import json
 from collections import UserDict
 from datetime import date, datetime
 import pickle
@@ -92,7 +91,6 @@ class Record:
             if phone.value == phone_to_del:
                 self.phones.remove(phone)
 
-
     def find_phone(self, phone_to_find):
         for phone in self.phones:
             if phone.value == phone_to_find:
@@ -104,7 +102,7 @@ class Record:
                 today = date.today()
                 next_birthday = date(year=today.year, month=self.birthday.value.month, day=self.birthday.value.day)
 
-                if today > next_birthday: # if we already had bday this year
+                if today > next_birthday:  # if we already had bday this year
                     next_birthday = date(today.year + 1, self.birthday.value.month, self.birthday.value.day)
 
                 days_left = (next_birthday - today).days
@@ -113,7 +111,7 @@ class Record:
             return 'This Record does not have Information on birthday'
 
     def __str__(self):
-        result_str = 'Record name: '+ self.name.value + ' '
+        result_str = 'Record name: ' + self.name.value + ' '
         if self.phones:
             phones_list = 'Phones_list: '
             for phone in self.phones:
@@ -218,4 +216,3 @@ else:
 
 if re_stored_abook:
     print(re_stored_abook)
-
